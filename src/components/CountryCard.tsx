@@ -1,4 +1,5 @@
 import { type Country } from '../types/country.ts'
+import { Link } from 'react-router-dom'
 
 type CountryCardProps = {
   country: Country
@@ -6,7 +7,10 @@ type CountryCardProps = {
 
 export default function CountryCard({ country }: CountryCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <Link
+      to={`/country/${country.cca3}`}
+      className="block bg-white dark:bg-[hsl(209,23%,22%)] dark:text-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+    >
       <div className="h-48 overflow-hidden">
         <img
           src={country.flags.svg}
@@ -30,6 +34,6 @@ export default function CountryCard({ country }: CountryCardProps) {
           </li>
         </ul>
       </div>
-    </div>
+    </Link>
   )
 }

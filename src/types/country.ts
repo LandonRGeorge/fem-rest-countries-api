@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 export const CountrySchema = z.object({
+  cca3: z.string(),
   flags: z.object({
     png: z.string(),
     svg: z.string(),
@@ -24,7 +25,6 @@ export const CountrySchema = z.object({
       symbol: z.string(),
     })
   ),
-  languages: z.record(z.string(), z.string()),
   tld: z.array(z.string()),
   capital: z.array(z.string()),
   region: z.string(),

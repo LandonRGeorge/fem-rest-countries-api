@@ -37,7 +37,7 @@ export function CountryList() {
         setLoading(true)
         setError('')
         const response = await fetch(
-          'https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,subregion,tld,currencies,languages,borders'
+          'https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital,subregion,tld,currencies,borders,cca3'
         )
         if (!response.ok) {
           throw Error('A problem occurred fetching.')
